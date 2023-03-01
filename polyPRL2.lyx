@@ -1,0 +1,2244 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{braket}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\noindent
+PRL : The Hubbard Model and DMFT 
+\end_layout
+
+\begin_layout Author
+\noindent
+Thomas Louis
+\end_layout
+
+\begin_layout Section*
+\noindent
+Introduction :
+\end_layout
+
+\begin_layout Standard
+\noindent
+Dans ce PRL, on étudie un modèle important de la physique de la matière
+ condensée : le 
+\series bold
+modèle de Hubbard
+\series default
+.
+ Il vise à rendre compte des interactions des éléctrons dans un solide cristalli
+n.
+ En particulier, il peremt de modéliser des transitions entre un isolant
+ et un conducteur.
+ On s'interessera au cas des 
+\series bold
+isolants de Mott
+\series default
+, des matériaux qui sont intialement conducteurs (c'est à dire qu'ils possèdent
+ une bande de conduction non vide), mais dont les intéractions entre éléctrons
+ sont trop puissants : les éléctrons restent alors localisés.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Pour comprendre le modèle de Hubbard, on utilise une nouveau formalisme
+ de la mécanique quantique, particulièrement utile dans le cadre des 
+\begin_inset Quotes eld
+\end_inset
+
+many body systems
+\begin_inset Quotes erd
+\end_inset
+
+, l
+\end_layout
+
+\begin_layout Section
+\noindent
+Quelques aspects théoriques liés aux problèmes à N corps
+\end_layout
+
+\begin_layout Subsection*
+La première quantification 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Dans le formalisme dit de la 
+\begin_inset Quotes eld
+\end_inset
+
+première quantification
+\begin_inset Quotes erd
+\end_inset
+
+ de la mécanique quantique, un système de 
+\begin_inset Formula $N$
+\end_inset
+
+ particules est décrit par une fonction d'onde à valeurs complexes 
+\begin_inset Formula $\psi(r_{1},..,r_{N})\in L^{2}$
+\end_inset
+
+ , telle que 
+\begin_inset Formula 
+\[
+|\psi(r_{1},...,r_{N})|^{2}dr_{1}...dr_{N}
+\]
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+est la probabilité de trouver la première particule dans 
+\begin_inset Formula $\mathcal{B}(r_{1},dr_{1}$
+\end_inset
+
+) la deuxième dans 
+\begin_inset Formula $\mathcal{B}(r_{2},dr_{2})$
+\end_inset
+
+, etc.
+ Dans le cas de particules indiscernables, on ajoute à ce formalisme les
+ conditions de symétrie et d'anti-symétrie.
+ Plus précisemment : 
+\begin_inset Formula 
+\[
+\Psi(r_{1},...,r_{i},...,r_{j},...,r_{N})=\lambda\Psi(r_{1},...,r_{j},...,r_{i},...,r_{N})
+\]
+
+\end_inset
+
+où 
+\begin_inset Formula $\lambda=\pm1$
+\end_inset
+
+, avec 
+\begin_inset Formula $+1$
+\end_inset
+
+ pour les bosons, 
+\begin_inset Formula $-1$
+\end_inset
+
+ pour les fermions.
+ Dans la suite, on ne s'intéressera qu'aux fermions, puisqu'on travaillera
+ avec des éléctrons.
+ De cette observation, on déduit que les états admissibles pour des systèmes
+ de 
+\begin_inset Formula $N$
+\end_inset
+
+ fermions sont de la forme 
+\begin_inset Formula 
+\[
+\sum_{\sigma\in S_{N}}\varepsilon(\sigma)\Ket{\psi_{\sigma(\nu_{1})},...,\psi_{\sigma(\nu_{N})}}
+\]
+
+\end_inset
+
+Si on fixe une base 
+\begin_inset Formula $\{\phi_{k}\}$
+\end_inset
+
+ du système à 1 particule, une base du système à 
+\begin_inset Formula $N$
+\end_inset
+
+ particules est 
+\begin_inset Formula 
+\[
+\left\{ \sum_{\sigma\in S_{N}}\varepsilon(\sigma)\Ket{\phi_{\sigma(\nu_{1})},...,\phi_{\sigma(\nu_{N})}}\right\} _{\nu_{1},...,\nu_{N}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+La seconde quantification 
+\end_layout
+
+\begin_layout Subsection*
+\noindent
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Ce formalisme est très lourd.
+ En fait, ce qu'on met en évidence avec la base de la première quantification
+ est que l'ordre n'importe pas, seul le nombre de particule dans chaque
+ état 
+\begin_inset Formula $\phi_{k}$
+\end_inset
+
+ compte.
+ C'est l'idée principale de la seconde quantification.
+ Si 
+\begin_inset Formula $\{\phi_{k}\}$
+\end_inset
+
+ désigne une base du système à 1 particule, la base de la seconde quantification
+ à 
+\begin_inset Formula $N$
+\end_inset
+
+ particules est donnée par 
+\begin_inset Formula 
+\[
+\left\{ \Ket{n_{1},n_{2},...,}\right\} _{n_{k}\in\{0,1\}}
+\]
+
+\end_inset
+
+où 
+\begin_inset Formula $n_{k}$
+\end_inset
+
+ désigne le nombre de particules dans l'état 
+\begin_inset Formula $k$
+\end_inset
+
+, et où on a toujours 
+\begin_inset Formula $\sum_{k}n_{k}=N$
+\end_inset
+
+.
+ On a bien sûr 
+\begin_inset Formula $n_{k}\in\{0,1\}$
+\end_inset
+
+, en conséquence du principe de Fermi.
+ 
+\begin_inset Newline newline
+\end_inset
+
+On définit alors les opérateurs de créations et d'anhilation, dont l'action
+ sur la base est définie de la manière suivante: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\underline{\text{Opérateur création :}}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+ & c_{k}^{\dagger}\Ket{n_{1},n_{2},...,n_{k}=0,...}=\lambda_{+}(k)\Ket{n_{1},n_{2},...,n_{k}=1,...}\\
+ & c_{k}^{\dagger}\Ket{n_{1},n_{2},...,n_{k}=1,...}=0
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula $\underline{\text{Opérateur anhilation :}}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+ & c_{k}\Ket{n_{1},n_{2},...,n_{k}=0,...}=0\\
+ & c_{k}\Ket{n_{1},n_{2},...,n_{k}=1,...}=\lambda_{-}(k)\Ket{n_{1},n_{2},...,n_{k}=0,...}
+\end{align*}
+
+\end_inset
+
+La notation est bien cohérent : il est facile de vérifier que 
+\begin_inset Formula $(c_{k})^{\dagger}=c_{k}^{\dagger}$
+\end_inset
+
+.
+ Pour rendre compte du caractère anti-symétrique des fermions, on rajoute
+ les conditions : 
+\begin_inset Formula 
+\begin{align*}
+ & c_{k}^{\dagger}c_{l}^{\dagger}=-c_{l}^{\dagger}c_{k}^{\dagger}\\
+ & c_{k}c_{l}=-c_{l}c_{k}\\
+ & c_{k}^{\dagger}c_{l}=-c_{l}c_{k}^{\dagger}+\delta_{k,l}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On peut alors définir la base en fonction des opérateurs création : 
+\begin_inset Formula 
+\[
+\Ket{n_{1},n_{2},...,n_{i},....}=(c_{1}^{\dagger})^{n_{1}}(c_{2}^{\dagger})^{n_{2}}...(c_{i}^{\dagger})^{n_{i}}...\Ket0
+\]
+
+\end_inset
+
+Et on a donc : 
+\begin_inset Formula 
+\[
+c_{i}^{\dagger}\Ket{n_{1},n_{2},...,n_{i},....}=(-1)^{s_{i}}\Ket{n_{1},n_{2},...,n_{i}+1,....}
+\]
+
+\end_inset
+
+où 
+\begin_inset Formula $s_{i}=\sum_{k=1}^{i-1}n_{i}$
+\end_inset
+
+, le nombre d'états occupés avant l'état 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ De même : 
+\begin_inset Formula 
+\[
+c_{i}\Ket{n_{1},n_{2},...,n_{i},....}=(-1)^{s_{i}}\Ket{n_{1},n_{2},...,n_{i}-1,....}
+\]
+
+\end_inset
+
+On va voir dans la suite que ces opérateurs perlettent en fait de définir
+ facilement des opérateurs très larges.
+ Notamment, on exprimera les hamiltoniens de nos modèles en termes de ces
+ opérateurs.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Représentation de Heisenberg :
+\end_layout
+
+\begin_layout Standard
+Dans le formalisme de la mécanique quantique avec laquelle nous avons l'habitude
+ de travailler, les observables 
+\begin_inset Formula $\hat{A}$
+\end_inset
+
+ sont constants, et le vecteur d'onde évolue dans le temps selon l'équation
+ de Schrödinger.
+ L'opérateur est déterminé par ses éléments de matrice, c'est à dire les
+ éléments de la forme 
+\begin_inset Formula 
+\[
+\Bra{\psi(t)}\hat{A}\Ket{\varphi(t)}
+\]
+
+\end_inset
+
+Ce formalisme est appelé 
+\series bold
+représentation de Schrödinger.
+ 
+\series default
+Remarquons que lorsque le hamiltonien est indépendant du temps, l'équation
+ de Schrôdinger donne 
+\begin_inset Formula $\Ket{\varphi(t)}=e^{-itH}\Ket{\varphi(0)}$
+\end_inset
+
+, de façon à ce que l'on ait : 
+\begin_inset Formula 
+\[
+\Bra{\psi(t)}\hat{A}\Ket{\varphi(t)}=\Bra{\psi(0)}e^{itH}\hat{A}e^{-itH}\Ket{\varphi(t)}
+\]
+
+\end_inset
+
+Ainsi, en définissant 
+\begin_inset Formula $\hat{A}(t)=e^{iHt}\hat{A}e^{-iHt}$
+\end_inset
+
+ , on peut supposer que le vecteur d'onde est constant, et que c'est l'opérateur
+ qui décrit l'évolution temporelle du système.
+ On obtient un nouveau formalisme appelé 
+\series bold
+Représentation de Heisenberg
+\series default
+.
+ Celle ci est complétement équivalent eà la représentation de Schrödinger.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+On peut également définir le 
+\series bold
+temps imaginaire 
+\series default
+
+\begin_inset Formula $\tau=it$
+\end_inset
+
+, ce qui permet d'écrire :
+\begin_inset Formula 
+\[
+\hat{A}(\tau)=e^{\tau H}\hat{A}e^{-\tau H}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Les fonctions de Green :
+\end_layout
+
+\begin_layout Standard
+Dans cette section, on définit un outil qui sera omniprésent dans la suite.
+ Il s'agit de la fonction de Green, définie par 
+\begin_inset Formula 
+\[
+G_{ij}(\tau)=\langle\mathcal{T}c_{i}(\tau)c_{j}(0)\rangle
+\]
+
+\end_inset
+
+ où l'opérateur 
+\begin_inset Formula $c_{i}(\tau)$
+\end_inset
+
+ est défini par la représentation de Heisenberg, et 
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+est 
+\series bold
+l'opérateur d'ordenancement
+\series default
+, défini par 
+\begin_inset Formula 
+\[
+\mathcal{T}c_{i}(\tau)c_{j}(0)=\begin{cases}
+c_{i}(\tau)c_{j}(0) & \text{ Si }\tau\geq0\\
+-c_{j}(0)c_{i}(\tau) & \text{ Sinon}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Les intégrales de chemin
+\end_layout
+
+\begin_layout Standard
+Nous ne développerons pas tous les détails, mais les intégrales de chemin
+ jouent un rôle dans la définition d'un modèle que nous utilisons.
+ Les intégrales permettent de généraliser la notion d'intégrales à des domaines
+ comme l'ensemble des chemins que peut prendre une particule qui va d'un
+ point à un autre dans l'espace.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+La fonction de partition (qui définit entièrement le système) s'écrit, dans
+ ce formalisme : 
+\begin_inset Formula 
+\[
+Z=\int\mathcal{D}(c^{*},c)e^{-S}
+\]
+
+\end_inset
+
+Où 
+\begin_inset Formula $S$
+\end_inset
+
+ est l'action liée au modèle.
+ En particulier, la connaissance de 
+\begin_inset Formula $S$
+\end_inset
+
+ entraine la connaissance totale du système.
+\end_layout
+
+\begin_layout Section
+Le Modèle de Hubbard :
+\end_layout
+
+\begin_layout Subsection*
+Définition 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Intuitivement, le modèle de Hubbard décrit un solide cristallin, représenté
+ par des sites (qui représentent chacun un atome), et des éléctrons qui
+ peuvent passer d'un site voisin à un autre.
+ Chaque site peut acueuillir deux éléctrons de spins opposés.
+ Si un site contient deux éléctrons, on suppose qu'ils intéragissent à travers
+ une force répuslsive.
+ Le modèle de Hubbard peut donc être décrit en deux parties : 
+\end_layout
+
+\begin_layout Enumerate
+Une partie cinétique : c'est le déplacement des éléctrons d'un site à un
+ autre 
+\end_layout
+
+\begin_layout Enumerate
+Une partie d'intéractions : c'est la répulsion entre eux d'éléctrons localisés
+ sur un même site
+\end_layout
+
+\begin_layout Standard
+\noindent
+Dans le formalisme de la seconde quantification, le hamiltonien du modèle
+ de Hubbard s'écrit : 
+\begin_inset Formula 
+\[
+H_{Hubb}=\underbrace{-\sum_{i,j,\sigma}t_{i,j}(c_{i\sigma}^{\dagger}c_{j\sigma}+c_{j\sigma}^{\dagger}c_{i\sigma})}_{H_{kin}}+\underbrace{U\sum_{i}n_{i\uparrow}n_{i\downarrow}}_{H_{int}}-\mu\sum_{i}(n_{i\uparrow}+n_{i\downarrow})
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Cette forme mérite quelques explications : 
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Les indices 
+\begin_inset Formula $i,j$
+\end_inset
+
+ désignent les sites, et 
+\begin_inset Formula $\sigma$
+\end_inset
+
+le spin.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Le terme 
+\begin_inset Formula $t_{ij}$
+\end_inset
+
+vaut 
+\begin_inset Formula $-\frac{t}{2}$
+\end_inset
+
+ si les sites 
+\begin_inset Formula $i$
+\end_inset
+
+ et
+\begin_inset Formula $j$
+\end_inset
+
+ sont voisins, et vaut 
+\begin_inset Formula $0$
+\end_inset
+
+ sinon.
+ On applique des conditions aux bords périodiques.
+\end_layout
+
+\begin_layout Standard
+On peut étudier quelques limites de ce modèle, à 
+\begin_inset Formula $t$
+\end_inset
+
+fixé :
+\end_layout
+
+\begin_layout Itemize
+Lorsque 
+\begin_inset Formula $U\rightarrow\infty$
+\end_inset
+
+, pour un éléctron donné, le nombre de sites acessibles diminue : il ne
+ peut se déplacer que vers un site vite, car sur un site occupé par un éléctron
+ de spin opposé, la répulsion sera trop forte.
+ En conséquence, les éléctrons sont 
+\series bold
+localisés
+\series default
+.
+ On dit qu'ils sont 
+\series bold
+fortement corrélés
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Lorsque 
+\begin_inset Formula $U\rightarrow0$
+\end_inset
+
+, beaucoup de sites sont accessibles.
+ Il est énergetiquement favorable pour un éléctron de se déplacer : les
+ éléctrons sont 
+\series bold
+délocalisés
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+En pratique, on observe un comportement assimilable à une transition de
+ phase : pour un certain 
+\begin_inset Formula $U=U_{c}$
+\end_inset
+
+, appelé 
+\begin_inset Formula $U$
+\end_inset
+
+ critique, le comportement des éléctrons change abruptement, passant de
+ délocalisés à localisés : 
+\series bold
+le matériau passe de conducteur à isolant
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Comment calculer U critique ? 
+\end_layout
+
+\begin_layout Standard
+Pour capturer plus précisemment ces phénomènes, on peut s'intéresser à la
+ double occupation d'un site 
+\begin_inset Formula $i$
+\end_inset
+
+donné.
+ On note 
+\begin_inset Formula $N_{i}=n_{i\uparrow}n_{i\downarrow}$
+\end_inset
+
+.
+ Cet opérateur admet pour valeur propre 0 ou 1.
+ Sa moyenne 
+\begin_inset Formula $\langle N_{i}\rangle=\bra{\psi}N_{i}\ket{\psi}$
+\end_inset
+
+ représente la probabilité que le site 
+\begin_inset Formula $i$
+\end_inset
+
+soit doublement occupé.
+ On peut faire les mêmes raisonnements à la limite, sur un site 
+\begin_inset Formula $i$
+\end_inset
+
+donné :
+\end_layout
+
+\begin_layout Itemize
+Lorsque 
+\begin_inset Formula $U\rightarrow0$
+\end_inset
+
+, les éléctrons ne sont pas corrélés.
+ Ainsi, chaque possibilité (vide, un éléctron up, un éléctron down, deux
+ éléctrons) sont équiprobables, et donc 
+\begin_inset Formula $\langle N_{i}\rangle\rightarrow0.25$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Lorsque 
+\begin_inset Formula $U$
+\end_inset
+
+ augmente, il devient de plus en plus énergetiquement défavorable d'avoir
+ deux éléctrons sur un même site : 
+\begin_inset Formula $\langle N_{i}\rangle$
+\end_inset
+
+ est une fonction décroissante de 
+\begin_inset Formula $U$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour obtenir 
+\begin_inset Formula $U_{c}$
+\end_inset
+
+, on cherchera donc un saut de la fonction 
+\begin_inset Formula $\langle N_{i}\rangle$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Nous verrons dans la suite une deuxième façon de calculer 
+\begin_inset Formula $U_{c}$
+\end_inset
+
+, liée aux fonctions de Green.
+ 
+\end_layout
+
+\begin_layout Section
+Résolution numérique naïve :
+\end_layout
+
+\begin_layout Standard
+On essaie maintenant de résoudre numériquement le modèle de Hubbard.
+ Ce problème est en fait très compliqué, notamment car la taille d'une base
+ de seconde quantification adaptée au problème croit exponentiellement en
+ le nombre de site : la matrice correspondant à 
+\begin_inset Formula $H_{Hubb}$
+\end_inset
+
+ devient rapidement trop grande pour être manipulée explicitement.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+On peut, dans un premier temps, essayer de résoudre le modèle de Hubbard
+ de façon naive, c'est à dire en construisant la matrice 
+\begin_inset Formula $H_{Hubb}$
+\end_inset
+
+, et en la diagonalisant de manière explicite.
+ De façon à optimiser au maximum un tel code, on fait les choix suivants
+ : 
+\end_layout
+
+\begin_layout Itemize
+Un vecteur de base 
+\begin_inset Formula $\ket{n_{1\uparrow},n_{1\downarrow},...,n_{p\uparrow},n_{p\downarrow}}$
+\end_inset
+
+ est représenté par un nombre en binaire 
+\begin_inset Formula $n_{1\uparrow}n_{1\downarrow}...n_{p\uparrow},n_{p\downarrow}$
+\end_inset
+
+.
+ On définit l'action de 
+\begin_inset Formula $H_{Hubb}$
+\end_inset
+
+ en utilisant les opérations élémentaires sur les nombres binaires.
+\end_layout
+
+\begin_layout Itemize
+La matrice 
+\begin_inset Formula $H_{Hubb}$
+\end_inset
+
+ est définie et diagonalisée en utilisant un module de type 
+\emph on
+sparse_matrix
+\emph default
+ qui permet de réduire la complexité en espace et en temps.
+\end_layout
+
+\begin_layout Standard
+La partie difficile dans cette résolution est le calcul des coefficients
+ de la matrice représentant 
+\begin_inset Formula $H_{Hubb}$
+\end_inset
+
+.
+ On détaille dans l'annexe la méthode utilisée.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+On implémente ces méthodes en 2D.
+ On peut calculer explicitement l'état fondamental associé à une grille
+ de taille 
+\begin_inset Formula $(n,m)$
+\end_inset
+
+, et des constantes 
+\begin_inset Formula $(t,U)$
+\end_inset
+
+ .
+ Pour mettre en avant la transition de phase, on trace la double occupation,
+ à 
+\begin_inset Formula $t$
+\end_inset
+
+fixé, en fonction de 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename nb_occu2-2.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nombre d'occupation pour une 
+\begin_inset Formula $(n,m)=(2,2)$
+\end_inset
+
+ et 
+\begin_inset Formula $t=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename nb_occu2-3.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nombre d'occupation pour une 
+\begin_inset Formula $(n,m)=(2,3)$
+\end_inset
+
+ et 
+\begin_inset Formula $t=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+On observe bien un saut de la fonction 
+\begin_inset Formula $\langle N_{i}\rangle$
+\end_inset
+
+.
+ Dans le cas 
+\begin_inset Formula $(n,m)=(2,2)$
+\end_inset
+
+ on a 
+\begin_inset Formula $U_{c}\approx2,5$
+\end_inset
+
+ et pour 
+\begin_inset Formula $(n,m)=(2,3)$
+\end_inset
+
+, on a 
+\begin_inset Formula $U_{c}\approx3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Methode DMFT : 
+\end_layout
+
+\begin_layout Standard
+Pour palier aux problèmes rencontrés ci-dessus, on utilise une méthode dite
+ de Dynamical Mean Field Theory (DMFT).
+ Dans un premier temps, on développe la théorie sous jacente à la DMFT,
+ et notamment quelques notions techniques utiles.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Transformation de Fourier, diagonalisation de 
+\begin_inset Formula $H_{Hubb}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Pour désigner les sites, on peut aussi utiliser une notation vectorielle
+ : on choisit une origine et un site 
+\begin_inset Formula $i$
+\end_inset
+
+ est déterminé par sa distance à l'origine 
+\begin_inset Formula $\mathbf{r}{}_{i}$
+\end_inset
+
+ .
+ Si une fonction 
+\begin_inset Formula $f$
+\end_inset
+
+ prend comme paramêtre un vecteur 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+, on note sa transformée de Fourier : 
+\begin_inset Formula 
+\[
+f(\mathbf{k})=\frac{1}{n_{k}}\sum_{\mathbf{r}}e^{-i\mathbf{k}\cdot\mathbf{r}}f(\mathbf{r})
+\]
+
+\end_inset
+
+Remarquons que si on applique a la fonction 
+\begin_inset Formula $f(\mathbf{r})$
+\end_inset
+
+ des conditions aux bords periodiques, par exemple 
+\begin_inset Formula $f(\mathbf{L})=f(\mathbf{0})$
+\end_inset
+
+, on obtient une quantification des impulsions par la condition 
+\begin_inset Formula 
+\[
+e^{\mathbf{k}\cdot\mathbf{L}}=1\Leftrightarrow\mathbf{k}\cdot\mathbf{L}=0\,[2\pi]
+\]
+
+\end_inset
+
+On a également la relation de transformée de Fourier inverse :
+\begin_inset Formula 
+\[
+f(\mathbf{r})=\frac{1}{n_{k}}\sum_{\mathbf{k}}e^{i\mathbf{k}\cdot\mathbf{r}}f(\mathbf{k})
+\]
+
+\end_inset
+
+On peut voir l'opérateur 
+\begin_inset Formula $c_{i\sigma}^{\dagger}c_{j\sigma}$
+\end_inset
+
+ comme une fonction de 
+\begin_inset Formula $\mathbf{r}=\mathbf{r}_{i}-\mathbf{r}_{j}$
+\end_inset
+
+.
+ La transformée de Fourier (inverse) s'écrit alors : 
+\begin_inset Formula 
+\[
+c_{i\sigma}^{\dagger}c_{j\sigma}=\frac{1}{n_{k}}\sum_{\mathbf{k}\sigma}e^{i\mathbf{k}\cdot(\mathbf{r}_{i}-\mathbf{r}_{j})}c_{\mathbf{k}\sigma}^{\dagger}c_{\mathbf{k\sigma}}
+\]
+
+\end_inset
+
+Et on a donc : 
+\begin_inset Formula 
+\[
+c_{j\sigma}^{\dagger}c_{i\sigma}=\frac{1}{n_{k}}\sum_{\mathbf{k}\sigma}e^{-i\mathbf{k}\cdot(\mathbf{r}_{i}-\mathbf{r}_{j})}c_{\mathbf{k}\sigma}^{\dagger}c_{\mathbf{k\sigma}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Pour la DMFT, il sera utile d'étudier le cas 
+\begin_inset Formula $U=0$
+\end_inset
+
+ de Hubbard.
+ Regardons à quoi ressemble ce hamiltonien en impulsion : 
+\begin_inset Formula 
+\[
+\begin{aligned}H_{Hubb}(U=0)= & -\sum_{ij\sigma}t_{ij}\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}2\cos\left(\mathbf{k}\cdot(\mathbf{r}_{i}-\mathbf{r}_{j})\right)c_{\mathbf{k}\sigma}^{\dagger}c_{\mathbf{k\sigma}}\\
+= & \sum_{\mathbf{k}\sigma}\underbrace{\sum_{ij}\frac{-t_{ij}}{n_{\mathbf{k}}}2\cos\left(\mathbf{k}\cdot(\mathbf{r}_{i}-\mathbf{r}_{j})\right)}_{\varepsilon(\mathbf{k})}c_{\mathbf{k}\sigma}^{\dagger}c_{\mathbf{k\sigma}}
+\end{aligned}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+On vient de diagonaliser le hamiltonien !
+\begin_inset Formula 
+\[
+H_{Hubb}(U=0)=\sum_{\mathbf{k}}\varepsilon(\mathbf{k})c_{\mathbf{k}\sigma}^{\dagger}c_{\mathbf{k\sigma}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Remarque : l'ensemble des 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ est déterminé par les conditions aux bords périodiques.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Faisons le calcul dans le cas d'un solide cristallin cubique en dimension
+ 3, en prenant 1 comme unité de longueur du cube.
+ Si on considère que le solide a comme nombre de sites par cotés 
+\begin_inset Formula $p_{1},p_{2},p_{3}$
+\end_inset
+
+ , alors on a :
+\begin_inset Formula 
+\[
+\mathbf{k_{\alpha}}=\begin{pmatrix}\frac{2\pi\alpha_{1}}{p_{1}}\\
+\frac{2\pi\alpha_{2}}{p_{2}}\\
+\frac{2\pi\alpha_{3}}{p_{3}}
+\end{pmatrix}
+\]
+
+\end_inset
+
+Pour 
+\begin_inset Formula $0\leq\alpha_{i}<p_{i}$
+\end_inset
+
+ .
+ On a alors : 
+\begin_inset Formula 
+\[
+\varepsilon(\mathbf{k}_{\alpha_{1}\alpha_{2},\alpha_{3}})=-2t\left(\cos\left(\frac{2\pi\alpha_{1}}{p_{1}}\right)+\cos\left(\frac{2\pi\alpha_{2}}{p_{2}}\right)+\cos\left(\frac{2\pi\alpha_{3}}{p_{3}}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\noindent
+Fonctions de Green du modèle de Hubbard 
+\end_layout
+
+\begin_layout Standard
+On définit la fonction de Green du modèle pour 
+\begin_inset Formula $U=0$
+\end_inset
+
+ (toutes les quantités avec subscript 0 correspondent au cas 
+\begin_inset Formula $U=0$
+\end_inset
+
+) :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+G_{0}(\mathbf{k,}\tau)=-\langle\mathcal{T}c_{k}^{\dagger}(\tau)c_{k}(0)\rangle
+\]
+
+\end_inset
+
+Cette fonction est 
+\begin_inset Formula $\beta$
+\end_inset
+
+ anti-periodique.
+ On peut considérer sa transformée de Fourier (en temps), pour obtenir,
+ en fréquence : 
+\begin_inset Formula 
+\[
+G_{0}(\mathbf{k,}i\omega_{n})=\frac{1}{i\omega_{n}+\mu-\varepsilon_{\mathbf{k}}}
+\]
+
+\end_inset
+
+Avec 
+\begin_inset Formula 
+\[
+\omega_{n}=(2n+1)\frac{2\pi}{\beta}
+\]
+
+\end_inset
+
+Revenons au cas 
+\begin_inset Formula $U\ne0$
+\end_inset
+
+.
+ Le changement de comportement dû aux intéractions est déterminé par l'énergie
+ propre 
+\begin_inset Formula $\Sigma(k,i\omega_{n})$
+\end_inset
+
+, définie par : 
+\begin_inset Formula 
+\[
+\Sigma(\mathbf{k},i\omega_{n})=G_{0}(\mathbf{k,}i\omega_{n})^{-1}-G(\mathbf{k,}i\omega_{n})^{-1}
+\]
+
+\end_inset
+
+On a alors 
+\begin_inset Formula 
+\[
+G(\mathbf{k,}i\omega_{n})=\frac{1}{i\omega_{n}+\mu-\varepsilon_{\mathbf{k}}-\Sigma(\mathbf{k},i\omega_{n})}
+\]
+
+\end_inset
+
+On définit alors la fonction de Green locale (dans toute la suite, on omettra
+ d'écrire 
+\begin_inset Formula $\frac{1}{n_{\mathbf{k}}}$
+\end_inset
+
+ mais les sommes sur 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ sont bien normalisées.
+\begin_inset Formula 
+\[
+G_{loc}(i\omega_{n})=\sum_{k}G(\mathbf{k},i\omega_{n})=\sum_{\mathbf{k}}\frac{1}{i\omega_{n}+\mu-\varepsilon_{\mathbf{k}}-\Sigma(k,i\omega_{n})}
+\]
+
+\end_inset
+
+Remarque : on peut également définir la fonction de Green par couple de
+ site : 
+\begin_inset Formula 
+\[
+G_{ij}(\tau)=-\langle\mathcal{T}c_{i}(\tau)c_{j}^{\dagger}(0)\rangle
+\]
+
+\end_inset
+
+Qu'on peut aussi voir comme une fonction vectorielle : 
+\begin_inset Formula $G_{ij}(\tau)=G(\mathbf{r=}\mathbf{r}_{i}-\mathbf{r}_{j}\mathbf{,\tau)}$
+\end_inset
+
+.
+ Mais alors on a la relation de Fourier :
+\begin_inset Formula 
+\[
+G(\mathbf{r})=\sum_{\mathbf{k}}e^{i\mathbf{k}\cdot\mathbf{r}}G(\mathbf{k})
+\]
+
+\end_inset
+
+Et donc 
+\begin_inset Formula 
+\[
+G_{ii}=G(\mathbf{r}=0)=\sum_{\mathbf{k}}G(\mathbf{k})=G_{loc}
+\]
+
+\end_inset
+
+Et on peut donc utiliser les notations 
+\begin_inset Formula $G_{ii}$
+\end_inset
+
+ et 
+\begin_inset Formula $G_{loc}$
+\end_inset
+
+ de facon indifférente.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Action effective 
+\end_layout
+
+\begin_layout Standard
+\noindent
+Dans l'optique de faire un raisonnement de type 
+\begin_inset Quotes eld
+\end_inset
+
+champ moyen
+\begin_inset Quotes erd
+\end_inset
+
+, on peut considérer un modèle (complétement équivalent à Hubbard), dans
+ lequel un seul atome est couplé à un bain.
+ Ce calcul est fait en termes d'actions (voir section sur les actions).
+ On part du modèle de Hubbard, on choisit un site (le site 0 par exemple)
+ et on va intégrer sur tous les autres sites.
+ On obtient une action 
+\begin_inset Formula $S_{imp}$
+\end_inset
+
+ (calculs compliqués) qui définit notre nouveau modèle, dit d'impureté.
+ On fait la limite quand 
+\begin_inset Formula $d\rightarrow+\infty$
+\end_inset
+
+ (où 
+\begin_inset Formula $d$
+\end_inset
+
+ est la dimension du problème).
+ C'est ici que le modèle d'impureté n'est plus rigoureusement égal à notre
+ modèle de Hubbard de départ.
+ Dans cette limite, on a : (Negele et Orland)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{imp}=\int_{0}^{\beta}\int_{0}^{\beta}d\tau d\tau'c^{*}(\tau)\left\{ \mathcal{-G}^{-1}(\tau-\tau')\right\} c(\tau')+\int_{0}^{\beta}d\tau Un_{\uparrow}(\tau)n_{\downarrow}(\tau)
+\]
+
+\end_inset
+
+Où 
+\begin_inset Formula $\mathcal{G}$
+\end_inset
+
+ joue le rôle de 
+\begin_inset Formula $G_{0}$
+\end_inset
+
+ dans le modèle de Hubbard.
+ On peut donc définir de la même façon:
+\begin_inset Formula 
+\[
+G_{imp}=-\langle\mathcal{T}c^{\dagger}(\tau)c(0)\rangle
+\]
+
+\end_inset
+
+ et 
+\begin_inset Formula 
+\[
+\Sigma_{imp}=\mathcal{G}^{-1}-G_{imp}^{-1}
+\]
+
+\end_inset
+
+D'autre part, on remarque que l'action 
+\begin_inset Formula $S_{imp}$
+\end_inset
+
+ n'est pas de façon évident sous la forme 
+\begin_inset Formula $\int d\tau H(\tau)$
+\end_inset
+
+ où 
+\begin_inset Formula $H$
+\end_inset
+
+ serait l'hamiltonien du système (qui n'agit pas forcemment dans l'espaace
+ initial de Hilbert).
+ On peut pallier partiellement à ce problème : il est possible de trouver
+ un hamiltonien tel qu'on ait, pour toute observable 
+\begin_inset Formula $X$
+\end_inset
+
+ : 
+\begin_inset Formula 
+\[
+\langle X\rangle=Tr\left(\frac{1}{Z}e^{-\beta H}X\right)
+\]
+
+\end_inset
+
+Cet hamiltonien, qu'on note 
+\begin_inset Formula $H_{AIM}$
+\end_inset
+
+ se décompose en trois parties (Antoine Georges) : 
+\begin_inset Formula 
+\[
+H_{AIM}=H_{atom}+H_{coupling}+H_{bath}
+\]
+
+\end_inset
+
+Avec : 
+\begin_inset Formula 
+\[
+H_{atom}=Un_{\uparrow}n_{\downarrow}-\mu(n_{\uparrow}+n_{\downarrow})\text{}
+\]
+
+\end_inset
+
+qui décrit 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+l'énergie d'intéraction sur le site,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H_{bath}=\sum_{l\sigma}\tilde{\varepsilon_{l}}a_{l\sigma}^{\dagger}a_{l\sigma}
+\]
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+l'énergie de chaque atome, et
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula 
+\[
+H_{coupling}=\sum_{l\sigma}V_{l}\left(a_{l\sigma}^{\dagger}c_{\sigma}+c_{\sigma}^{\dagger}a_{l\sigma}\right)
+\]
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+qui modélise la probabilité de saut entre le site et le bain.
+ Ces paramètres sont reliés aux fonctions de Green à travers la fonction
+ d'hybridation : 
+\begin_inset Formula 
+\[
+\Delta(i\omega_{n})=\sum_{l}\frac{|V_{l}|^{2}}{i\omega_{n}-\tilde{\varepsilon_{l}}}
+\]
+
+\end_inset
+
+par 
+\begin_inset Formula 
+\[
+\mathcal{G}^{-1}(i\omega_{n})=i\omega_{n}+\mu-\Delta(i\omega_{n})
+\]
+
+\end_inset
+
+Revenons à la DMFT.
+ L'idée de faire l'approximation 
+\begin_inset Formula 
+\[
+\Sigma_{imp}=\Sigma(\mathbf{k})
+\]
+
+\end_inset
+
+Le modèle d'impureté n'est maintenant plus équivalent au modèle de Hubbard.
+ On impose donc 
+\begin_inset Formula 
+\[
+G_{imp}=G_{loc}
+\]
+
+\end_inset
+
+On a toutes les équations pour définir le programme DMFT.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Pour les calculs explicite, on a besoin de la formule de Lehman : 
+\begin_inset Formula 
+\[
+G_{ab}(i\omega_{n})=-\frac{1}{Z}\sum_{i,j}\frac{\left(e^{-\beta E_{i}}+e^{-\beta E_{j}}\right)\Bra{\Psi_{i}}c_{a}\Ket{\Psi_{j}}\Bra{\Psi_{j}}c_{b}^{\dagger}\Ket{\Psi_{i}}}{E_{j}-E_{i}-i\omega_{n}}
+\]
+
+\end_inset
+
+On présente maintenant l'algorithme DMFT : 
+\end_layout
+
+\begin_layout Enumerate
+On choisit une valeur arbitraire pour 
+\begin_inset Formula $\Sigma_{imp}$
+\end_inset
+
+.
+ Par exemple, 
+\begin_inset Formula $\Sigma_{imp}=0$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Enumerate
+On calcule 
+\begin_inset Formula $G_{loc}(i\omega_{n})$
+\end_inset
+
+ avec l'approximation 
+\begin_inset Formula $\Sigma_{imp}=\Sigma(\mathbf{k})$
+\end_inset
+
+ : 
+\begin_inset Formula 
+\[
+G_{loc}(i\omega_{n})=\sum_{\mathbf{k}}\frac{1}{i\omega_{n}+\mu-\varepsilon_{\mathbf{k}}-\Sigma_{imp}(i\omega_{n})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+On peut alors calculer le champ effectif 
+\begin_inset Formula $\mathcal{G}$
+\end_inset
+
+ avec la relation de cohérence 
+\begin_inset Formula $G_{imp}=G_{loc}$
+\end_inset
+
+ : 
+\begin_inset Formula $\mathcal{G}=\left(\Sigma_{imp}+G_{imp}^{-1}\right)^{-1}$
+\end_inset
+
+ puis 
+\begin_inset Formula $\Delta(i\omega_{n})=i\omega_{n}+\mu-\mathcal{G}^{-1}(i\omega_{n})=i\omega_{n}+\mu-\Sigma_{imp}(i\omega_{n})-G_{imp}^{-1}(i\omega_{n})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+On peut alors trouver des coefficients 
+\begin_inset Formula $V_{l}$
+\end_inset
+
+ et 
+\begin_inset Formula $\tilde{\varepsilon}_{l}$
+\end_inset
+
+ tels qu'on retrouve l'égalité
+\begin_inset Formula 
+\[
+\Delta(i\omega_{n})=\sum_{l}\frac{|V_{l}|^{2}}{i\omega_{n}-\tilde{\varepsilon_{l}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+On résout le modèle d'impureté pour ces coefficients : on obtient une nouvelle
+ fonction 
+\begin_inset Formula $G_{imp}$
+\end_inset
+
+ avec la formule de Lehman.
+ Dans notre cas on a 
+\begin_inset Formula 
+\[
+G_{imp}(i\omega_{n})=-\frac{1}{Z}\sum_{i,j}\frac{\left(e^{-\beta E_{i}}+e^{-\beta E_{j}}\right)|\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}}|^{2}}{E_{j}-E_{i}-i\omega_{n}}
+\]
+
+\end_inset
+
+et on peut alors extraire l'énergie propre 
+\begin_inset Formula $\Sigma_{imp}=\mathcal{G}^{-1}-G_{imp}^{-1}$
+\end_inset
+
+.
+ On revient au point 2 jusqu'à convergence de 
+\begin_inset Formula $G_{imp}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Cet algorithme mérite une petite explication.
+ Il est important de comprendre que notre objectif est de calculer 
+\begin_inset Formula $G_{imp}$
+\end_inset
+
+.
+ Qaund on écrit 
+\begin_inset Formula $G_{imp}=G_{loc}$
+\end_inset
+
+ comme relation de cohérence, ca ne signifie pas qu'on fixe 
+\begin_inset Formula $G_{imp}$
+\end_inset
+
+.
+ Cette relation de cohérence nous permet seulement d'obtenir le champ effectif
+ 
+\begin_inset Formula $\mathcal{G}$
+\end_inset
+
+ qui nous permet de définir un modèle d'impureté le plus proche possible
+ du modèle de Hubbard.
+\end_layout
+
+\begin_layout Standard
+Rajouter fonction spectrale + verification (bosses en mu...)
+\end_layout
+
+\begin_layout Subsection*
+Résultats :
+\end_layout
+
+\begin_layout Standard
+Nous disposons de nouvelles variables (
+\begin_inset Formula $G_{imp},\Sigma_{imp})$
+\end_inset
+
+, et celles ci vont nous donner des informations sur le système assez facilement.
+ En particulier, on remarque que 
+\begin_inset Formula $\Sigma_{imp}$
+\end_inset
+
+ mesure l'écart à un modèle sans intéraction.
+ Ainsi, 
+\begin_inset Formula $\Sigma_{imp}\neq0$
+\end_inset
+
+ correspond à un cas où on ne peut pas négliger l'intéraction entre atomes,
+ c'est à dire au cas où le matériau est isolant.
+ Ainsi, un saut de 
+\begin_inset Formula $\Sigma_{imp}(i\omega_{n})$
+\end_inset
+
+ (par exemple en 
+\begin_inset Formula $\omega=0$
+\end_inset
+
+), qui passe de 
+\begin_inset Formula $0$
+\end_inset
+
+ à une valeur non nulle, correspond à une transition entre conducteur et
+ isolant.
+\end_layout
+
+\begin_layout Subsection*
+Comment vérifier nos résultats ?
+\end_layout
+
+\begin_layout Standard
+Un problème apparait rapidement : il est difficile de vérifier les résultats
+ qu'on obtient.
+ D'une part, il faut vérifier que tous les calculs fait sont bons.
+ D'autre part, il convient de vérifier que le résultat est bien proche du
+ résultat réel, c'est à dire que les approximations utilisées ne sont pas
+ trop restrictives.
+ On présente ici, pour chaque étape de la boucle DMFT, les vérifications
+ faites pour essayer de résoudre ce problème.
+\end_layout
+
+\begin_layout Enumerate
+Pas de vérification à faire
+\end_layout
+
+\begin_layout Enumerate
+On vérifie que 
+\begin_inset Formula $\sum_{\mathbf{k}}\varepsilon_{\mathbf{k}}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+On vérifie l'asymptotique de 
+\begin_inset Formula $\Delta$
+\end_inset
+
+, c'est à dire que 
+\begin_inset Formula $\mathcal{R}(\Delta(i\omega_{n}))\rightarrow0$
+\end_inset
+
+ et 
+\begin_inset Formula $\mathcal{I}\left(\Delta(i\omega_{n})\right)\frac{\omega_{n}}{6t^{2}}\rightarrow1$
+\end_inset
+
+ quand 
+\begin_inset Formula $n\rightarrow+\infty$
+\end_inset
+
+ (voir annexe)
+\end_layout
+
+\begin_layout Enumerate
+Le programme de fit fournit une estimation de l'écart à la valeur réelle
+ : on s'assure il est assez faible 
+\end_layout
+
+\begin_layout Enumerate
+On vérifie l'asymptotique de 
+\begin_inset Formula $G_{imp}$
+\end_inset
+
+, c'est à dire que 
+\begin_inset Formula $\mathcal{R}(\Delta(i\omega_{n}))\rightarrow0$
+\end_inset
+
+ et 
+\begin_inset Formula $\mathcal{I}\left(G_{imp}(i\omega_{n})\omega_{n}\right)\rightarrow1$
+\end_inset
+
+ quand 
+\begin_inset Formula $n\rightarrow+\infty$
+\end_inset
+
+ (voir annexe).
+ On vérifie également que 
+\begin_inset Formula $\Sigma_{imp}\rightarrow0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Avec un ordinateur quantique : 
+\end_layout
+
+\begin_layout Standard
+On a vu les limitations, même avec une boucle DMFT, de l'ordinateur classique
+ pour résoudre ce problème.
+ L'idée est maintenant de regarder si on peut améliorer ces performances
+ avec un ordinateur quantique.
+ 
+\end_layout
+
+\begin_layout Part*
+Annexe :
+\end_layout
+
+\begin_layout Subsection*
+Calcul de l'hamiltonien :
+\end_layout
+
+\begin_layout Standard
+On cherche à calculer les éléments de matrice 
+\begin_inset Formula 
+\[
+\Bra{\phi_{k}}H_{hubb}\Ket{\phi_{l}}
+\]
+
+\end_inset
+
+Par exemple, on veut calculer : 
+\begin_inset Formula 
+\begin{align*}
+\Bra{\phi_{k}}c_{i}^{\dagger}c_{j}\Ket{\phi_{l}} & =\Bra{l_{0}...l_{j}=0...l_{i}=1...l_{n}}c_{i}^{\dagger}c_{j}\Ket{l_{0}...l_{j}=1...l_{i}=0...l_{n}}\\
+ & =\Bra{l_{0}...l_{j}=0...l_{i}=1...l_{n}}c_{i}^{\dagger}(-1)^{s_{j}}\Ket{l_{0}...l_{j}=0...l_{i}=0...l_{n}}\\
+ & =\Bra{l_{0}...l_{j}=0...l_{i}=1...l_{n}}(-1)^{s_{i}+\varepsilon}(-1)^{s_{j}}\Ket{l_{0}...l_{j}=0...l_{i}=1...l_{n}}\\
+ & =(-1)^{s_{i}+\varepsilon+s_{j}}
+\end{align*}
+
+\end_inset
+
+où 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ vaut 
+\begin_inset Formula $1$
+\end_inset
+
+ si 
+\begin_inset Formula $j<i$
+\end_inset
+
+, 
+\begin_inset Formula $1$
+\end_inset
+
+ sinon.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Pour calculer la matrice 
+\end_layout
+
+\begin_layout Subsection*
+Asymptotiques :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\underline{\text{Asymptotique de }\Delta(i\omega_{n})}:$
+\end_inset
+
+ On souligne ici l'importance de normaliser la somme sur 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+.
+ Regardons par exemple la première étape de l'algorithme DMFT.
+ Comme on part avec 
+\begin_inset Formula $\Sigma_{imp}=0$
+\end_inset
+
+, on a 
+\begin_inset Formula 
+\[
+\Delta(i\omega_{n})=i\omega_{n}+\mu-\left(\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\frac{1}{i\omega_{n}+\mu-\varepsilon_{\mathbf{k}}}\right)^{-1}
+\]
+
+\end_inset
+
+Et on veut une égalité du type :
+\begin_inset Formula 
+\[
+i\omega_{n}+\mu-\left(\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\frac{1}{i\omega_{n}+\mu-\varepsilon_{\mathbf{k}}}\right)^{-1}=\sum_{l}\frac{|V_{l}|^{2}}{i\omega_{n}-\tilde{\varepsilon_{l}}}
+\]
+
+\end_inset
+
+On a :
+\begin_inset Formula 
+\begin{align*}
+\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\frac{1}{i\omega_{n}+\mu-\varepsilon_{\mathbf{k}}} & =\frac{1}{i\omega_{n}}\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\frac{1}{1+\frac{\mu-\varepsilon_{\mathbf{k}}}{i\omega_{n}}}\\
+ & =\frac{1}{i\omega_{n}}\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\left(1-\frac{\mu-\varepsilon_{\mathbf{k}}}{i\omega_{n}}+\left(\frac{\mu-\varepsilon_{\mathbf{k}}}{i\omega_{n}}\right)^{2}+\mathcal{O}\left(\frac{1}{\left(i\omega_{n}\right)^{3}}\right)\right)\\
+ & =\frac{1}{i\omega_{n}}\left(1-\frac{\mu}{i\omega_{n}}+\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\left(\frac{\mu-\varepsilon_{\mathbf{k}}}{i\omega_{n}}\right)^{2}+\mathcal{O}\left(\frac{1}{\left(i\omega_{n}\right)^{3}}\right)\right)
+\end{align*}
+
+\end_inset
+
+Où on a utilisé 
+\begin_inset Formula $\sum_{\mathbf{k}}\varepsilon_{\mathbf{k}}=0$
+\end_inset
+
+.
+ On développe séparement :
+\begin_inset Formula 
+\[
+\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\left(\frac{\mu-\varepsilon_{\mathbf{k}}}{i\omega_{n}}\right)^{2}=\frac{1}{(i\omega_{n})^{2}}\sum_{\mathbf{k}}\left(\mu^{2}-2\mu\varepsilon_{\mathbf{k}}+\varepsilon_{\mathbf{k}}^{2}\right)=\frac{1}{(i\omega_{n})^{2}}\left(\mu^{2}+\sum_{\mathbf{k}}\varepsilon_{\mathbf{k}}^{2}\right)
+\]
+
+\end_inset
+
+Et il n'est pas dur de voir que : 
+\begin_inset Formula 
+\[
+\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\varepsilon_{\mathbf{k}}^{2}=\frac{1}{n_{\mathbf{k}}}\left(2t\right)^{2}\sum_{0\leq\alpha_{i}<p_{i}}\left[\cos^{2}\left(\frac{2\pi\alpha_{1}}{p_{1}}\right)+\cos^{2}\left(\frac{2\pi\alpha_{2}}{p_{2}}\right)+\cos^{2}\left(\frac{2\pi\alpha_{3}}{p_{3}}\right)\right]
+\]
+
+\end_inset
+
+Donc 
+\begin_inset Formula 
+\[
+\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\varepsilon_{\mathbf{k}}^{2}=\frac{1}{n_{\mathbf{k}}}4t^{2}\left(p_{2}p_{3}\sum_{0\leq\alpha_{1}<p_{1}}\cos^{2}\left(\frac{2\pi\alpha_{1}}{p_{1}}\right)+p_{1}p_{3}\sum_{0\leq\alpha_{2}<p_{2}}\cos^{2}\left(\frac{2\pi\alpha_{2}}{p_{2}}\right)+p_{1}p_{2}\sum_{0\leq\alpha_{3}<p_{3}}\cos^{2}\left(\frac{2\pi\alpha_{3}}{p_{3}}\right)\right)
+\]
+
+\end_inset
+
+Mais 
+\begin_inset Formula 
+\[
+\cos^{2}\left(\frac{2\pi\alpha_{i}}{p_{i}}\right)=\frac{\cos\left(\frac{4\pi\alpha_{i}}{p_{i}}\right)+1}{2}
+\]
+
+\end_inset
+
+Donc 
+\begin_inset Formula 
+\[
+\sum_{0\leq\alpha_{i}<p_{i}}\cos^{2}\left(\frac{2\pi\alpha_{i}}{p_{i}}\right)=\sum_{0\leq\alpha_{i}<p_{i}}\frac{\cos\left(\frac{4\pi\alpha_{i}}{p_{i}}\right)+1}{2}=\frac{1}{2}\sum_{0\leq\alpha_{i}<p_{i}}\cos\left(\frac{4\pi\alpha_{i}}{p_{i}}\right)+\frac{p_{i}}{2}=\frac{p_{i}}{2}
+\]
+
+\end_inset
+
+Donc 
+\begin_inset Formula 
+\[
+\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\varepsilon_{\mathbf{k}}^{2}=\frac{1}{n_{\mathbf{k}}}4t^{2}\frac{3}{2}p_{1}p_{2}p_{3}=\frac{1}{n_{\mathbf{k}}}6p_{1}p_{2}p_{3}t^{2}
+\]
+
+\end_inset
+
+Or 
+\begin_inset Formula $n_{\mathbf{k}}=p_{1}p_{2}p_{3}$
+\end_inset
+
+.
+ Donc :
+\begin_inset Formula 
+\[
+\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\varepsilon_{\mathbf{k}}^{2}=6t^{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\sum_{\mathbf{k}}\frac{1}{i\omega_{n}+\mu-\varepsilon_{\mathbf{k}}}=\frac{1}{i\omega_{n}}\left(1-\frac{\mu}{i\omega_{n}}+\frac{1}{(i\omega_{n})^{2}}\left(\mu^{2}+6t^{2}\right)+\mathcal{O}\left(\frac{1}{\left(i\omega_{n}\right)^{3}}\right)\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\left(\frac{1}{n_{\mathbf{k}}}\sum_{\mathbf{k}}\frac{1}{i\omega_{n}+\mu-\varepsilon_{\mathbf{k}}}\right)^{-1} & =i\omega_{n}\frac{1}{1-\frac{\mu}{i\omega_{n}}+\frac{1}{(i\omega_{n})^{2}}\left(\mu^{2}+6t^{2}\right)+\mathcal{O}\left(\frac{1}{\left(i\omega_{n}\right)^{3}}\right)}\\
+ & =i\omega_{n}\left(1+\frac{\mu}{i\omega_{n}}-\frac{1}{(i\omega_{n})^{2}}\left(\mu^{2}+6t^{2}\right)+\frac{\mu^{2}}{(i\omega_{n})^{2}}+\mathcal{O}\left(\frac{1}{\left(i\omega_{n}\right)^{3}}\right)\right)
+\end{align*}
+
+\end_inset
+
+ C'est à dire que : 
+\begin_inset Formula 
+\[
+\Delta(i\omega_{n})=\frac{6t^{2}}{i\omega_{n}}+\mathcal{O}\left(\frac{1}{\left(i\omega_{n}\right)^{2}}\right)
+\]
+
+\end_inset
+
+Dans le cas général, c'est à dire 
+\begin_inset Formula $\Sigma_{imp}\neq0$
+\end_inset
+
+, on peut montrer que qu'on garde à chaque étape de la boucle 
+\begin_inset Formula $\Sigma_{imp}(i\omega_{n})\rightarrow0$
+\end_inset
+
+ quand 
+\begin_inset Formula $n\rightarrow+\infty$
+\end_inset
+
+.
+ Ainsi, cette estimation reste vraie dans toutes les étapes de la boucle.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ D'autre part, de la même façon :
+\begin_inset Formula 
+\[
+\sum_{l}\frac{|V_{l}|^{2}}{i\omega_{n}-\tilde{\varepsilon_{l}}}=\frac{1}{i\omega_{n}}\sum_{l}\frac{|V_{l}|^{2}}{1-\frac{\tilde{\varepsilon_{l}}}{i\omega_{n}}}=\frac{1}{i\omega_{n}}\sum_{l}|V_{l}|^{2}\left(1+\mathcal{O}(\frac{1}{i\omega_{n}})\right)
+\]
+
+\end_inset
+
+Remarquons que si la somme sur les impulsions n'était pas normalisée à 1,
+ on n'obtiendrait pas un tel résultat et il serait impossible d'effectuer
+ l'optimisation.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\underline{\text{Asymptotique de }G_{imp}(i\omega_{n})}:$
+\end_inset
+
+ On cherche à trouver le comportement asymptotique de 
+\begin_inset Formula 
+\[
+G_{imp}(i\omega_{n})=-\frac{1}{Z}\sum_{i,j}\frac{\left(e^{-\beta E_{i}}+e^{-\beta E_{j}}\right)|\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}}|^{2}}{E_{j}-E_{i}-i\omega_{n}}
+\]
+
+\end_inset
+
+On peut remarquer que le comportement à l'infini est dicté par 
+\begin_inset Formula 
+\[
+\frac{1}{Zi\omega_{n}}\sum_{i,j}(e^{-\beta E_{i}}+e^{-\beta E_{j}})|\Bra{\Psi_{i}}c\Ket{\Psi_{j}}|^{2}
+\]
+
+\end_inset
+
+Mais 
+\begin_inset Formula 
+\begin{align*}
+\sum_{i,j}(e^{-\beta E_{i}}+e^{-\beta E_{j}})|\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}}|^{2} & =\sum_{i,j}e^{-\beta E_{j}}\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}}\Bra{\Psi_{i}}c\Ket{\Psi_{j}}\\
+ & +\sum_{i,j}e^{-\beta E_{i}}\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}}\Bra{\Psi_{i}}c\Ket{\Psi_{j}}\\
+ & =\sum_{j}e^{-\beta E_{j}}\Bra{\Psi_{j}}c^{\dagger}\left(\sum_{i}\Ket{\Psi_{i}}\Bra{\Psi_{i}}\right)c\Ket{\Psi_{j}}\\
+ & +\overline{\sum_{i,j}e^{-\beta E_{i}}\Bra{\Psi_{i}}c\Ket{\Psi_{j}}\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}}}\\
+ & =\sum_{j}e^{-\beta E_{j}}\Bra{\Psi_{j}}c^{\dagger}\left(\sum_{i}\Ket{\Psi_{i}}\Bra{\Psi_{i}}\right)c\Ket{\Psi_{j}}\\
+ & +\overline{\sum_{i}e^{-\beta E_{i}}\Bra{\Psi_{i}}c\left(\sum_{j}\Ket{\Psi_{j}}\Bra{\Psi_{j}}\right)c^{\dagger}\Ket{\Psi_{i}}}
+\end{align*}
+
+\end_inset
+
+Or 
+\begin_inset Formula $\left(\sum_{j}\Ket{\Psi_{j}}\Bra{\Psi_{j}}\right)=1$
+\end_inset
+
+.
+ Donc 
+\begin_inset Formula 
+\begin{align*}
+\sum_{i,j}(e^{-\beta E_{i}}+e^{-\beta E_{j}})|\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}}|^{2} & =\sum_{j}e^{-\beta E_{j}}\Bra{\Psi_{j}}c^{\dagger}c\Ket{\Psi_{j}}+\sum_{i}e^{-\beta E_{i}}\Bra{\Psi_{i}}cc^{\dagger}\Ket{\Psi_{i}}\\
+ & =\sum_{j}e^{-\beta E_{j}}\Bra{\Psi_{j}}c^{\dagger}c+cc^{\dagger}\Ket{\Psi_{j}}
+\end{align*}
+
+\end_inset
+
+Or 
+\begin_inset Formula $c^{\dagger}c+cc^{\dagger}=1$
+\end_inset
+
+.
+ Donc 
+\begin_inset Formula 
+\[
+\sum_{i,j}(e^{-\beta E_{i}}+e^{-\beta E_{j}})|\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}}|^{2}=Z
+\]
+
+\end_inset
+
+D'où :
+\begin_inset Formula 
+\[
+G_{imp}(i\omega_{n})\sim\frac{1}{i\omega_{n}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Calcul de la formule de Lehman :
+\end_layout
+
+\begin_layout Standard
+En pratique, le calcul de 
+\begin_inset Formula $G_{imp}$
+\end_inset
+
+ par la formule de Lehman peut être perilleux, du fait que les énergies
+ 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+ sont potentiellement très grandes, et donc les exponentielles 
+\begin_inset Formula $e^{-\beta E_{i}}$
+\end_inset
+
+ très petites.
+ En pratique, on calculera donc plutôt : 
+\begin_inset Formula 
+\begin{align*}
+G_{imp}(i\omega_{n}) & =-\frac{1}{\sum_{k}e^{-\beta E_{k}}}\sum_{i,j}\frac{\left(e^{-\beta E_{i}}+e^{-\beta E_{j}}\right)|\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}}|^{2}}{E_{j}-E_{i}-i\omega_{n}}\\
+ & =-\sum_{i,j}\frac{\left(\left(\sum_{k}e^{-\beta(E_{k}-E_{i})}\right)^{-1}+\left(\sum_{k}e^{-\beta(E_{k}-E_{j})}\right)^{-1}\right)|\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}}|^{2}}{E_{j}-E_{i}-i\omega_{n}}
+\end{align*}
+
+\end_inset
+
+Pour le calcul du produit scalaire, on fixe 
+\begin_inset Formula $\{\Ket{\phi_{k}}=\Ket{k_{n}...k_{0}}\}$
+\end_inset
+
+ la base de seconde quantification et on écrit : 
+\begin_inset Formula 
+\[
+\Ket{\Psi_{i}}=\sum_{k=0}^{2^{n+1}-1}a_{k}^{(j)}\Ket{\phi_{k}}=\sum_{k_{0}=0}^{1}...\sum_{k_{n}=0}^{1}a_{\overline{k_{n}...k_{0}}}^{(i)}\Ket{k_{0}...k_{n}}
+\]
+
+\end_inset
+
+où 
+\begin_inset Formula $\overline{k_{n}...k_{0}}$
+\end_inset
+
+ est la décomposition en binaire de 
+\begin_inset Formula $k$
+\end_inset
+
+, et représente le ket 
+\begin_inset Formula $\Ket{n_{0}=k_{0},...,n_{n}=k_{n}}$
+\end_inset
+
+ On utilise la convention : 
+\begin_inset Formula $i=(k,\sigma)=2k+\sigma,$
+\end_inset
+
+ c'est à dire que 
+\begin_inset Formula $k_{i}=1$
+\end_inset
+
+ si et seulement si le site 
+\begin_inset Formula $k$
+\end_inset
+
+ est occupé par un fermion de spin 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+ On a donc par exemple 
+\begin_inset Formula $n=2n_{site}-1$
+\end_inset
+
+.
+ On choisit de placer le site d'impureté en k maximale, c'est à dire que
+ ce site correspond aux bits 
+\begin_inset Formula $n-1$
+\end_inset
+
+ et 
+\begin_inset Formula $n.$
+\end_inset
+
+ Comme cela n'a pas d'importance, on prend 
+\begin_inset Formula $c=c_{\sigma=1},$
+\end_inset
+
+ c'est à dire que 
+\begin_inset Formula $c$
+\end_inset
+
+agit sur le bit 
+\begin_inset Formula $k_{n}.$
+\end_inset
+
+ Plus précisemment :
+\begin_inset Formula 
+\begin{align*}
+c^{\dagger}\Ket{\Psi_{i}} & =\sum_{k_{0}=0}^{1}...\sum_{k_{n-1}=0}^{1}a_{\overline{0k_{n-1}...k_{0}}}^{(i)}c^{\dagger}\Ket{k_{0}...k_{n-1}0}\\
+ & =\sum_{k_{0}=0}^{1}...\sum_{k_{n-1}=0}^{1}a_{\overline{0k_{n-1}...k_{0}}}^{(i)}(-1)^{n_{un}(k)}\Ket{k_{0}...k_{n-1}1}\\
+ & =\sum_{k=0}^{2^{n}-1}a_{k}^{(i)}(-1)^{n_{un}(k)}\Ket{\phi_{k+2^{n}}}
+\end{align*}
+
+\end_inset
+
+où 
+\begin_inset Formula $n_{un}$
+\end_inset
+
+(k) est le nombre de chiffre un dans 
+\begin_inset Formula $k=\overline{k_{n-1}...k_{0}}$
+\end_inset
+
+.
+ Donc 
+\begin_inset Formula 
+\begin{align*}
+\Bra{\Psi_{j}}c^{\dagger}\Ket{\Psi_{i}} & =\sum_{l=0}^{2^{n+1}-1}(a_{l}^{(j)})^{*}\sum_{k=0}^{2^{n}-1}a_{k}^{(i)}(-1)^{n_{un}(k)}\Bra{\phi_{l}}\Ket{\phi_{k+2^{n}}}\\
+ & =\sum_{k=0}^{2^{n}-1}(a_{k+2^{n}}^{(j)})^{*}a_{k}^{(i)}(-1)^{n_{un}(k)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

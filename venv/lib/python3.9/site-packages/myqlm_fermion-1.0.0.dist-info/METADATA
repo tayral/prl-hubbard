@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: myqlm-fermion
+Version: 1.0.0
+Summary: myQLM-fermion package
+Home-page: https://atos.net/en/lp/myqlm
+Author: Atos Quantum Lab
+License: Atos myQLM EULA
+Project-URL: Documentation, https://myqlm.github.io
+Project-URL: Bug Tracker, https://github.com/myQLM/myqlm-issues/issues
+Project-URL: Community, https://myqlmworkspace.slack.com
+Project-URL: Source code, https://github.com/myQLM/myqlm-fermion
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: qat-core
+Requires-Dist: qat-lang
+Requires-Dist: myqlm
+Requires-Dist: anytree
+Requires-Dist: bitstring
+Requires-Dist: numpy
+Requires-Dist: pytest
+Requires-Dist: scipy
+Requires-Dist: tqdm
+
+MyQLM fermion module
+=============================
+
+`MyQLM-fermion` is the new open-source module in `MyQLM`.
+
+This module contains tools specific to spin and fermionic systems. It includes, among other things:
+- various objects to describe fermionic and spin Hamiltonians,
+- objects to describe molecular systems,
+- various transformations between fermionic and spin representations,
+- a variational quantum eigensolver (VQE),
+- a trotterization module,
+- a quantum phase estimation module,
+- a natural gradient-based optimizer,
+- a sequential optimizer,
+- a multiqubit gate noise mitigation plugin,
+- an ADAPT-VQE plugin implementation,
+- ...
+
+Installation
+----------------
+
+For now, this module has to be installed directly from the sources:
+
+```python
+git clone https://github.com/myQLM/myqlm-fermion.git
+cd myqlm-fermion
+pip install -r requirements.txt
+pip install .
+```
+
+Documentation
+-------------
+
+`MyQLM-fermion` is part of the MyQLM package, whose documentation can be found [here](https://myqlm.github.io/).
+To access directly MyQLM-fermion documentation, [click here](https://myqlm.github.io/qat-fermion.html).
+
+Changelog
+---------
+
+The changelog can be found [here](CHANGELOG.md).

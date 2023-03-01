@@ -1,0 +1,38 @@
+SOFTWARE LICENSE AGREEMENT FOR THE PROPRIETARY PART OF MYQLM (hereinafter referred to as the “Proprietary Software EULA”)
+
+IMPORTANT: This Bull End User License Agreement ("EULA") is a legal document that binds You with all obligations contained in the present document provided by Bull SAS (as identified in the footnote) for the software product identified below, which includes the proprietary computer software and may include associated media, printed materials, and "online" or electronic documentation (collectively, the "SOFTWARE").
+
+PLEASE READ THIS EULA CAREFULLY BEFORE COMPLETING THE INSTALLATION PROCESS
+AND USING THE SOFTWARE. By installing, copying, or otherwise using the SOFTWARE, you agree to be bound by the terms of this EULA. If you do not agree to the terms of this EULA, then do not install or use the SOFTWARE.
+
+SOFTWARE LICENSE
+1. DEFINITIONS
+(a) "BULL" equals Bull SAS.
+
+2. LICENSE GRANTS
+This EULA grants you the following limited, non-exclusive, worldwide license, without a right to sub-license, subject to the terms and conditions set forth in this EULA:
+a)      Your license rights to use the proprietary part of the Software under this EULA are NON-EXCLUSIVE and NON-TRANSFERABLE.
+b)      You may install and use the SOFTWARE on multiple computers located at your premises for the sole purpose of using it for its intended purpose: prepare quantum circuits and run quantum simulations either on Your laptop or on an Atos Quantum Learning Machine.
+
+3. LICENSE RESTRICTIONS
+a)      Other than as set forth in Section 2, you may not make or distribute copies of the SOFTWARE, or electronically transfer the SOFTWARE from one computer to another or over a network. You shall not, and shall not permit any third party to: (i) use the Licensed Materials except to the extent permitted this EULA; (ii) modify or create any derivative work of any part of the licensed Software; (iii) permit any third parties to use the licensed Software; (iv) market, sublicense, publish, distribute, reproduce, assign, transfer, rent, lease or loan the licensed Software; or (v) use the licensed Software for commercial time-sharing.
+b)      You may not alter, merge, modify, adapt or translate the SOFTWARE, or decompile, reverse engineer, disassemble, or otherwise reduce the SOFTWARE to a human-perceivable form.
+c)     The SOFTWARE is free. You may not rent, lease, lend, sell, resell, or otherwise transfer for value to third parties.
+
+4. COPYRIGHT AND INTELLECTUAL PROPERTY RIGHTS
+The SOFTWARE is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties. The SOFTWARE is licensed, not sold. Furthermore, this EULA does not grant you any rights in connection with any trademarks or service marks of BULL. BULL reserves all intellectual property rights pertaining to the Software, including copyrights, and trademark rights.
+
+5. NO WARRANTIES
+YOU ACCEPT THE SOFTWARE "AS IS," AND BULL (AND ITS THIRD-PARTY SUPPLIERS AND LICENSORS) MAKE NO WARRANTY AS TO ITS USE, PERFORMANCE, OR OTHERWISE. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, BULL (AND ITS THIRD-PARTY SUPPLIERS AND LICENSORS) DISCLAIM ALL OTHER REPRESENTATIONS, WARRANTIES, AND CONDITIONS, EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. THE ENTIRE RISK ARISING OUT OF USE OR PERFORMANCE OF THE SOFTWARE PRODUCT REMAINS WITH YOU.
+
+6. LIMITATION OF LIABILITY
+THIS LIMITATION OF LIABILITY IS TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW. IN NO EVENT SHALL BULL (OR ITS THIRD PARTY SUPPLIERS AND LICENSORS) BE LIABLE FOR ANY COSTS OF SUBSTITUTE PRODUCTS OR SERVICES, OR FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, OR LOSS OF BUSINESS INFORMATION) ARISING OUT OF THIS EULA OR THE USE OF OR INABILITY TO USE THE SOFTWARE PRODUCT OR THE FAILURE TO PROVIDE SUPPORT SERVICES, EVEN IF BULL HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN ANY CASE, BULL'S (AND ITS THIRD-PARTY SUPPLIERS' AND LICENSORS') ENTIRE LIABILITY ARISING OUT OF THIS EULA SHALL BE LIMITED TO THE AMOUNT PAID BY YOU FOR THE SOFTWARE THAT CAUSED SUCH DAMAGE.
+
+7. DOCUMENTATION AND EXAMPLES
+BULL BEARS NO LIABILITY FOR ANY TECHNICAL INACCURACIES OR TYPOGRAPHICAL ERRORS OR FOR DAMAGES RESULTING FROM USE OF THE INFORMATION IN ANY PROVIDED DOCUMENTATION AND/OR EXAMPLES.
+
+8. SOFTWARE UPDATES
+This license does not grant you any right to any updates to the SOFTWARE, or any support services.
+
+
+Copyright © 2020 Bull SAS. All rights reserved.

@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: myqlm-simulators
+Version: 1.7.1
+Summary: myQLM-simulators package
+Home-page: https://atos.net/en/lp/myqlm
+Author: Atos Quantum Lab
+License: Atos myQLM EULA
+Project-URL: Documentation, https://myqlm.github.io
+Project-URL: Bug Tracker, https://github.com/myQLM/myqlm-issues/issues
+Project-URL: Community, https://myqlmworkspace.slack.com
+Project-URL: Source code, https://github.com/myQLM/myqlm-simulators
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE
+Requires-Dist: qat-core
+Requires-Dist: qat-lang
+Requires-Dist: qat-variational
+Requires-Dist: numpy
+
+Python Linalg
+===============
+
+This package contains a simple numpy-based simulator for quantum circuits, ``PyLinalg``.
+
+
+Installation
+----------------
+
+You can use pip to install this package:
+```bash
+pip install myqlm-simulators
+```
+
+Documentation
+-------------------
+
+Check out [the online documentation](https://myqlm.github.io/myqlm_specific/qat-pylinalg.html).

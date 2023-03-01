@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: myqlm-clinalg
+Version: 0.0.5
+Summary: Module myqlm-clinalg [916f708] - Compiled by Atos
+Home-page: https://atos.net/en/lp/myqlm
+Author: Atos Quantum Lab
+Author-email: myqlm@atos.net
+License: Atos myQLM EULA
+Project-URL: Documentation, https://myqlm.github.io
+Project-URL: Bug Tracker, https://github.com/myQLM/myqlm-issues/issues
+Project-URL: Community, https://myqlmworkspace.slack.com
+Keywords: Quantum,myQLM,QLM,Atos
+Platform: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: Other/Proprietary License
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: qat-comm
+Requires-Dist: qat-core
+Requires-Dist: qat-lang
+
+C++ Linalg
+===============
+
+This package contains a linear algebra based simulator for quantum circuits, ``CLinalg``, which backend is written in
+C++.
+
+
+Installation
+----------------
+
+You can use pip to install this package:
+```bash
+pip install myqlm-clinalg
+```
+
+Documentation
+-------------------
+
+Check out [the online documentation](https://myqlm.github.io/myqlm_specific/qat-clinalg.html).

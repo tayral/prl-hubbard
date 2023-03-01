@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: qat-comm
+Version: 1.4.2
+Summary: Module qat-comm [10b5ddb] - Compiled by Atos
+Home-page: https://atos.net/en/lp/myqlm
+Author: Atos Quantum Lab
+Author-email: myqlm@atos.net
+License: Atos myQLM EULA
+Project-URL: Documentation, https://myqlm.github.io
+Project-URL: Bug Tracker, https://github.com/myQLM/myqlm-issues/issues
+Project-URL: Community, https://myqlmworkspace.slack.com
+Keywords: Quantum,myQLM,QLM,Atos
+Platform: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: Other/Proprietary License
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: thrift (==0.16.0)
+Requires-Dist: numpy
+
+# Module qat-comm
+
+This module *qat-comm* is part of [myQLM](https://pypi.org/project/myqlm/) project. myQLM is a quantum
+software stack for writing, simulating, optimizing, and executing quantum programs. This module
+provides all the data-structures needed by **myQLM**
+
+## Prerequisites
+This version of myQLM works on both Windows, macOS and Linux for different versions of Python 3. Please look at the [compatibility matrix](https://myqlm.github.io/myqlm_specific/install.html#compatibility-matrix) to ensure myQLM is installable on your computer.
+
+This module can be installed by typing the following command:
+
+```
+pip install myqlm
+```
+
+## License
+[Atos myQLM EULA](https://myqlm.github.io/myqlm_specific/license.html#proprietary-part)
+
